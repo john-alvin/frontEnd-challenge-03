@@ -1,8 +1,68 @@
-.attribution {
-  font-size: 11px;
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.attribution a {
-  color: hsl(228deg, 45%, 44%);
+body {
+  font-family: "Epilogue", sans-serif;
+  font-size: 18px;
+  min-height: 100vh;
+  overflow: hidden;
+  line-height: 1;
+}
+
+main .hero img {
+  -o-object-position: top center;
+     object-position: top center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1.8rem;
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container__title {
+  font-weight: 700;
+  margin: 0 0.5rem;
+  text-align: center;
+  font-size: 2.3rem;
+  padding: 0.5rem;
+}
+.container__details {
+  font-weight: 400;
+  margin: 1rem 0.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 41%);
+}
+.container__learn-more {
+  font-size: 1.1rem;
+  border-radius: 15px;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  text-transform: capitalize;
+  background-color: hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 98%);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  transition: all 0.5s ease-in-out;
+}
+.container__learn-more:hover {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(0deg, 0%, 8%);
+  border: 1px solid hsl(0deg, 0%, 8%);
+  cursor: pointer;
+}
+.container__learn-more:active {
+  background-color: hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 98%);
+  border: none;
 }/*# sourceMappingURL=main.css.map */
