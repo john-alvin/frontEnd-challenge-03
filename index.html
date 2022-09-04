@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/dist/css/main.css" />
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body>
@@ -70,20 +75,22 @@
 
     <!-------------------------------------main--------------------- -->
     <main>
-      <div class="hero"></div>
+      <picture class="hero">
+        <img src="/images/image-hero-mobile.png" alt="cool-image" />
+      </picture>
       <section class="container">
         <h1 class="container__title">Make remote work</h1>
         <p class="container__details">
-          et your team in sync, no matter your location. Streamline processes,
+          get your team in sync, no matter your location. Streamline processes,
           create team rituals, and watch productivity soar.
         </p>
         <button class="container__learn-more">learn more</button>
-        <ul class="container__partners">
-          <li class="partner-logo"></li>
-          <li class="partner-logo"></li>
-          <li class="partner-logo"></li>
-          <li class="partner-logo"></li>
-        </ul>
+        <picture class="container__partners">
+          <img src="/images/client-databiz.svg" alt="data-biz" />
+          <img src="/images/client-audiophile.svg" alt="audiophile" />
+          <img src="/images/client-meet.svg" alt="meet-logo" />
+          <img src="/images/client-maker.svg" alt="maker-logo" />
+        </picture>
       </section>
     </main>
 
