@@ -1,0 +1,57 @@
+// humburger menu button ---------/
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.snap {
+  background-color: black;
+  width: 80px;
+  height: 80px;
+}
+.nav {
+  display: none;
+}
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  @include transition-ease;
+  border: 1px solid green;
+
+  &__burger {
+    width: 50px;
+    height: 6px;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 10%);
+    @include transition-ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 45px;
+      height: 6px;
+      background-color: $secondary-color;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 10%);
+      @include transition-ease;
+      transform: translateY(-16px);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 45px;
+      height: 6px;
+      background-color: $secondary-color;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 10%);
+      @include transition-ease;
+      transform: translateY(16px);
+    }
+  }
+}
