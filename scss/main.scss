@@ -6,7 +6,7 @@ body {
   font-family: $main-font, sans-serif;
   font-size: 18px;
   min-height: 100vh;
-  overflow: hidden;
+
   line-height: 1;
 }
 
@@ -67,6 +67,16 @@ main {
       background-color: $tertiary-color;
       color: $primary-color;
       border: none;
+    }
+  }
+  &__partners {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    img {
+      width: 100%;
     }
   }
 }
