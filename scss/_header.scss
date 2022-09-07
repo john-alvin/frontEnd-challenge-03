@@ -8,9 +8,6 @@ header {
   width: 80px;
   height: 80px;
 }
-.nav {
-  display: none;
-}
 
 .menu-btn {
   position: relative;
@@ -24,6 +21,7 @@ header {
   border: 1px solid green;
 
   &__burger {
+    z-index: 1;
     width: 50px;
     height: 6px;
     background-color: $secondary-color;
@@ -34,7 +32,7 @@ header {
     &::before {
       content: "";
       position: absolute;
-      width: 45px;
+      width: 50px;
       height: 6px;
       background-color: $secondary-color;
       border-radius: 5px;
@@ -45,7 +43,7 @@ header {
     &::after {
       content: "";
       position: absolute;
-      width: 45px;
+      width: 50px;
       height: 6px;
       background-color: $secondary-color;
       border-radius: 5px;
@@ -53,5 +51,28 @@ header {
       @include transition-ease;
       transform: translateY(16px);
     }
+
+    &.open::before {
+      width: 35px;
+    }
+
+    &.open::after {
+      width: 35px;
+    }
+  }
+}
+
+.nav {
+  border: 1px solid red;
+  min-height: 100vh;
+  position: absolute;
+  right: -100%;
+  background-color: $primary-color;
+  width: 200px;
+  padding: 5rem 2rem;
+  @include transition-ease;
+
+  &.open {
+    right: 0;
   }
 }
