@@ -6,10 +6,127 @@
   min-width: 60%;
   padding: 7rem 2rem;
   top: 0;
+
   @include transition-ease;
 
   &.open {
     right: 0;
     z-index: 1;
+  }
+}
+
+// menu---------------------------nav
+
+.menu-nav {
+  &__features {
+    cursor: pointer;
+
+    .select {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      &__caret {
+        height: 12px;
+        width: 12px;
+        background-image: url(/images/icon-arrow-down.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include transition-ease;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    //-----------------features--expand----->
+    .features {
+      margin-left: 3rem;
+
+      &__menu {
+        position: relative;
+
+        .todo-list::before {
+          content: "";
+          background-image: url(/images/icon-todo.svg);
+          height: 18px;
+          width: 18px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          left: -1.5rem;
+          top: -0.1rem;
+        }
+
+        .calendar::before {
+          content: "";
+          background-image: url(/images/icon-calendar.svg);
+          height: 18px;
+          width: 18px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          left: -1.5rem;
+          top: -0.1rem;
+        }
+        .reminders::before {
+          content: "";
+          background-image: url(/images/icon-reminders.svg);
+          height: 18px;
+          width: 18px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          left: -1.5rem;
+          top: -0.1rem;
+        }
+        .planning::before {
+          content: "";
+          background-image: url(/images/icon-planning.svg);
+          height: 18px;
+          width: 18px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          left: -1.5rem;
+          top: -0.1rem;
+        }
+      }
+      &.open {
+        display: none;
+      }
+    }
+  }
+
+  &__company {
+    cursor: pointer;
+
+    .select {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      &__caret {
+        height: 12px;
+        width: 12px;
+        background-image: url(/images/icon-arrow-down.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include transition-ease;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .company-list {
+      margin-left: 2rem;
+    }
   }
 }
