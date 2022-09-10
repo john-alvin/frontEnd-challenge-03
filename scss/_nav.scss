@@ -1,12 +1,11 @@
 .nav {
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
   right: -100%;
   background-color: $primary-color;
   min-width: 60%;
   padding: 7rem 2rem;
   top: 0;
-
   @include transition-ease;
 
   &.open {
@@ -23,9 +22,10 @@
 
     .select {
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
       align-items: center;
       margin-bottom: 2rem;
+      gap: 3rem;
 
       &__caret {
         height: 12px;
@@ -95,20 +95,19 @@
           top: -0.1rem;
         }
       }
-      &.open {
-        display: none;
-      }
     }
   }
+  //-----------------company--expand----->
 
   &__company {
     cursor: pointer;
 
     .select {
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
       align-items: center;
       margin-bottom: 2rem;
+      gap: 2.7rem;
 
       &__caret {
         height: 12px;
