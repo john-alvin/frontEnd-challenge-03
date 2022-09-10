@@ -21,8 +21,20 @@ body {
       background-color: rgba($color: $secondary-color, $alpha: 0.4);
     }
   }
-}
 
+  ul {
+    list-style: none;
+    color: $secondary-color;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    li {
+      margin-bottom: 2rem;
+    }
+  }
+}
+.hidden {
+  display: none;
+}
 main {
   .hero {
     img {
