@@ -2,7 +2,10 @@ const menuBtn = document.querySelector(".menu-btn");
 const btnBurger = document.querySelector(".menu-btn__burger");
 const nav = document.querySelector(".nav");
 const body = document.querySelector("body");
+
 let menuOpen = false;
+
+let menuList = false;
 
 menuBtn.addEventListener("click", function () {
   if (!menuOpen) {
@@ -17,5 +20,31 @@ menuBtn.addEventListener("click", function () {
     nav.classList.remove("open");
     btnBurger.classList.remove("open");
     menuOpen = false;
+  }
+});
+
+const featureBtn = document.querySelector(".menu-nav__features");
+const companyBtn = document.querySelector(".menu-nav__company");
+const featureList = document.querySelector(".features");
+const companyList = document.querySelector(".company-list");
+const caret = document.querySelectorAll(".select__caret");
+
+companyBtn.addEventListener("click", () => {
+  if (!menuList) {
+    companyList.classList.remove("hidden");
+    menuList = true;
+  } else {
+    companyList.classList.add("hidden");
+    menuList = false;
+  }
+});
+
+featureBtn.addEventListener("click", () => {
+  if (!menuList) {
+    featureList.classList.remove("hidden");
+    menuList = true;
+  } else {
+    featureList.classList.add("hidden");
+    menuList = false;
   }
 });
