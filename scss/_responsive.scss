@@ -1,0 +1,343 @@
+@include media-md {
+  body {
+    overflow: hidden;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &.open {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: $secondary-color, $alpha: 0.4);
+      }
+    }
+
+    ul {
+      list-style: none;
+      color: $secondary-color;
+      text-transform: capitalize;
+      margin-bottom: 2rem;
+      li {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .hidden {
+    display: none;
+  }
+
+  main {
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        object-fit: cover;
+        margin-bottom: 1.8rem;
+        max-width: 100%;
+      }
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title {
+        font-weight: $bold-weight;
+        margin: 0 0.5rem;
+        text-align: center;
+        font-size: 2.3rem;
+        padding: 0.5rem;
+      }
+
+      &__details {
+        font-weight: $medium-weight;
+        margin: 1rem 0.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        padding: 0.5rem;
+        text-transform: capitalize;
+        font-size: 1rem;
+        color: $secondary-color;
+      }
+
+      &__learn-more {
+        font-size: 1.1rem;
+        border-radius: 15px;
+        border: none;
+        padding: 0.8rem 1.8rem;
+        text-transform: capitalize;
+        background-color: $tertiary-color;
+        color: $primary-color;
+        font-weight: $bold-weight;
+        margin-bottom: 3rem;
+        @include transition-ease;
+
+        &:hover {
+          background-color: $primary-color;
+          color: $tertiary-color;
+          border: 1px solid $tertiary-color;
+          cursor: pointer;
+        }
+        &:active {
+          background-color: $tertiary-color;
+          color: $primary-color;
+          border: none;
+        }
+      }
+      &__partners {
+        display: grid;
+        place-items: center;
+        min-width: 100%;
+        min-height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr));
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  // footer---------------------->
+  footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+
+    & {
+      font-size: 1rem;
+      color: $secondary-color;
+
+      a {
+        color: $tertiary-color;
+      }
+    }
+  }
+
+  // header--------------------------->
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+
+    .snap {
+      height: 100%;
+      cursor: pointer;
+      @include transition-ease;
+
+      &:hover {
+        filter: drop-shadow(2px 5px 7px $secondary-color);
+      }
+    }
+
+    .nav {
+      min-height: 100vh;
+      position: fixed;
+      right: -100%;
+      background-color: $primary-color;
+      min-width: 60%;
+      padding: 7rem 2rem;
+      top: 0;
+      @include transition-ease;
+
+      &.open {
+        right: 0;
+        z-index: 1;
+      }
+    }
+  }
+
+  // humburger menu button ---------/
+  .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include transition-ease;
+    z-index: 2;
+
+    &__burger {
+      width: 40px;
+      height: 2px;
+      background-color: $secondary-color;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 5%);
+      @include transition-ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background-color: $secondary-color;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 5%);
+        @include transition-ease;
+        transform: translateY(-10px);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background-color: $secondary-color;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 5%);
+        @include transition-ease;
+        transform: translateY(10px);
+      }
+
+      &.open::before {
+        width: 30px;
+      }
+
+      &.open::after {
+        width: 30px;
+      }
+    }
+  }
+
+  // nav------------------------------->
+
+  .menu-nav {
+    &__features {
+      cursor: pointer;
+
+      .select {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 2rem;
+        gap: 3rem;
+
+        &__caret {
+          height: 12px;
+          width: 12px;
+          background-image: url(/images/icon-arrow-down.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include transition-ease;
+
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      //-----------------features--expand----->
+      .features {
+        margin-left: 3rem;
+
+        &__menu {
+          position: relative;
+
+          .todo-list::before {
+            content: "";
+            background-image: url(/images/icon-todo.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+
+          .calendar::before {
+            content: "";
+            background-image: url(/images/icon-calendar.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+          .reminders::before {
+            content: "";
+            background-image: url(/images/icon-reminders.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+          .planning::before {
+            content: "";
+            background-image: url(/images/icon-planning.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+        }
+      }
+    }
+    //-----------------company--expand----->
+
+    &__company {
+      cursor: pointer;
+
+      .select {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 2rem;
+        gap: 2.7rem;
+
+        &__caret {
+          height: 12px;
+          width: 12px;
+          background-image: url(/images/icon-arrow-down.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include transition-ease;
+
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .company-list {
+        margin-left: 2rem;
+      }
+    }
+
+    &__login {
+      text-align: center;
+    }
+
+    &__register {
+      text-align: center;
+
+      button {
+        border: 2px solid $secondary-color;
+        border-radius: 15px;
+        max-width: 100%;
+        padding: 0.8rem 3.5rem;
+        text-transform: capitalize;
+        background-color: $primary-color;
+        color: $secondary-color;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

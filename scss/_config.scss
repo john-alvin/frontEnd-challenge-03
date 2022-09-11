@@ -20,3 +20,9 @@ $main-font: "Epilogue";
 @mixin transition-ease {
   transition: all 0.3s ease-in-out;
 }
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
