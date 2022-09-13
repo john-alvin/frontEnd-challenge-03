@@ -1,0 +1,16 @@
+@include media-lg {
+  header {
+    display: flex;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+  }
+  .nav {
+    border: 1px solid red;
+    min-width: 90vw;
+    .menu-nav {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
