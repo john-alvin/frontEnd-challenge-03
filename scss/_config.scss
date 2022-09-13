@@ -26,3 +26,9 @@ $main-font: "Epilogue";
     @content;
   }
 }
+
+@mixin media-lg {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
