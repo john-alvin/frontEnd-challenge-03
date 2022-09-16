@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+
+@include media-md {
+  // humburger menu button ---------/
+  .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include transition-ease;
+    z-index: 2;
+
+    &__burger {
+      width: 40px;
+      height: 2px;
+      background-color: $secondary-color;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 5%);
+      @include transition-ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background-color: $secondary-color;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 5%);
+        @include transition-ease;
+        transform: translateY(-10px);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background-color: $secondary-color;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px darken($color: $secondary-color, $amount: 5%);
+        @include transition-ease;
+        transform: translateY(10px);
+      }
+
+      &.open::before {
+        width: 30px;
+      }
+
+      &.open::after {
+        width: 30px;
+      }
+    }
+  }
+}

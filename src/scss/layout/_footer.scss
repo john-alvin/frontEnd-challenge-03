@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+@include media-md {
+  footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+
+    & {
+      font-size: 1rem;
+      color: $secondary-color;
+
+      a {
+        color: $tertiary-color;
+      }
+    }
+  }
+}
