@@ -1,5 +1,13 @@
 @use "../abstracts" as *;
-
+@include media-lg {
+  main {
+    height: 90vh;
+    position: relative;
+    .mobile-hero {
+      display: none;
+    }
+  }
+}
 // background color for body when nav pop-up
 @include media-md {
   body {
@@ -21,9 +29,9 @@
         background-color: rgba($color: $secondary-color, $alpha: 0.4);
       }
     }
-  }
-  .hidden {
-    display: none;
+    .hidden {
+      display: none;
+    }
   }
 
   //main----
