@@ -1,5 +1,26 @@
 @use "../abstracts" as *;
+@include media-lg {
+  header {
+    display: flex;
+    margin: 1rem;
+    gap: 1rem;
+    justify-content: space-between;
 
+    .snap {
+      padding: 1rem;
+    }
+
+    .nav {
+      max-height: 1.5rem;
+
+      .menu-nav {
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+      }
+    }
+  }
+}
 @include media-md {
   header {
     display: flex;
