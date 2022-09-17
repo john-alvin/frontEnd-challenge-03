@@ -1,10 +1,147 @@
 @use "../abstracts" as *;
 
+@include media-lg {
+  .menu-nav {
+    cursor: pointer;
+
+    &__features {
+      .select {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 2rem;
+        gap: 3rem;
+
+        &__caret {
+          height: 12px;
+          width: 12px;
+          background-image: url(/images/icon-arrow-down.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include transition-ease;
+
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .features {
+        visibility: hidden;
+        opacity: 0;
+        box-shadow: 2px 1px 8px 1px
+          lighten($color: $tertiary-color, $amount: 70%);
+        border-radius: 5px;
+        position: absolute;
+        background-color: $primary-color;
+        min-width: 10rem;
+        padding-top: 1rem;
+        @include transition-ease;
+
+        &__menu {
+          position: relative;
+          transform: translate(25%, 50%);
+
+          .todo-list::before {
+            content: "";
+            background-image: url(/images/icon-todo.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+
+          .calendar::before {
+            content: "";
+            background-image: url(/images/icon-calendar.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+          .reminders::before {
+            content: "";
+            background-image: url(/images/icon-reminders.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+          .planning::before {
+            content: "";
+            background-image: url(/images/icon-planning.svg);
+            height: 18px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -1.5rem;
+            top: -0.1rem;
+          }
+        }
+        &.open {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    &__company {
+      .select {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 2rem;
+        gap: 2.7rem;
+
+        &__caret {
+          height: 12px;
+          width: 12px;
+          background-image: url(/images/icon-arrow-down.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          @include transition-ease;
+
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .company-list {
+        @include transition-ease;
+        visibility: hidden;
+        opacity: 0;
+        box-shadow: 2px 1px 8px 1px
+          lighten($color: $tertiary-color, $amount: 70%);
+        border-radius: 5px;
+        position: absolute;
+        background-color: $primary-color;
+        min-width: 8rem;
+        padding: 1rem;
+
+        &.open {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
 @include media-md {
   .menu-nav {
-    &__features {
-      cursor: pointer;
+    cursor: pointer;
 
+    &__features {
       .select {
         display: flex;
         justify-content: start;
@@ -85,8 +222,6 @@
     //--------company--expand----->
 
     &__company {
-      cursor: pointer;
-
       .select {
         display: flex;
         justify-content: start;
