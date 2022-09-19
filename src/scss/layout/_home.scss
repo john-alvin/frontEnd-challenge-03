@@ -1,10 +1,79 @@
 @use "../abstracts" as *;
 @include media-lg {
   main {
-    height: 90vh;
-    position: relative;
-    .mobile-hero {
+    .hero {
       display: none;
+    }
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem auto;
+    padding: 2rem;
+    place-items: center;
+    max-width: 1500px;
+
+    .desktop-hero {
+      min-width: 100%;
+      min-height: 50rem;
+      background-color: transparent;
+      background-image: url(/images/image-hero-desktop.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 3rem;
+
+      &__title {
+        font-size: 5rem;
+        padding: 0.5rem;
+
+        .make-breakline {
+          display: block;
+        }
+      }
+      &__details {
+        color: $secondary-color;
+        text-transform: capitalize;
+        min-width: 20rem;
+        padding: 0.5rem;
+        line-height: 2rem;
+      }
+
+      &__learn-more {
+        font-size: 1.1rem;
+        border-radius: 15px;
+        border: none;
+        padding: 0.8rem 1.8rem;
+        text-transform: capitalize;
+        background-color: $tertiary-color;
+        color: $primary-color;
+        font-weight: $bold-weight;
+        margin-bottom: 3rem;
+        @include transition-ease;
+
+        &:hover {
+          background-color: $primary-color;
+          color: $tertiary-color;
+          border: 1px solid $tertiary-color;
+          cursor: pointer;
+        }
+        &:active {
+          background-color: $tertiary-color;
+          color: $primary-color;
+          border: none;
+        }
+      }
+      &__partners {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
     }
   }
 }
