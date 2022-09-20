@@ -2,21 +2,38 @@
 @include media-lg {
   header {
     display: flex;
-    margin: 1rem;
+    margin: 2rem;
     gap: 1rem;
-    justify-content: space-between;
+    max-height: 5vh;
 
     .snap {
       padding: 1rem;
     }
 
     .nav {
-      max-height: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      li {
+        margin-bottom: 2rem;
+      }
 
       .menu-nav {
         display: flex;
+        justify-content: space-between;
         gap: 2rem;
         padding: 1rem;
+      }
+
+      .sign-up {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        * {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -46,6 +63,10 @@
       padding: 7rem 2rem;
       top: 0;
       @include transition-ease;
+
+      li {
+        margin-bottom: 2rem;
+      }
 
       &.open {
         right: 0;
