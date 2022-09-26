@@ -276,7 +276,7 @@ body ul {
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem auto;
     padding: 2rem;
-    max-width: 93rem;
+    max-width: 75rem;
   }
   main .hero {
     display: none;
