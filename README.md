@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution](https://your-solution-url.com)
+- Solution URL: [solution](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-solutionsass-UDo4VIJ_v6)
 - Live Site URL: [live-view](https://dropdown-nav-solution.netlify.app/)
 
 ## My process
